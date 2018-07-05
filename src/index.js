@@ -18,8 +18,8 @@ ReactDOM.render(
 
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    const NextApp = require('./App').default
+  module.hot.accept('./routes', () => {
+    const NextApp = require('./routes').default
     ReactDOM.render(
       <NextApp />,
       rootEl

@@ -12,7 +12,17 @@ class NavDrawer extends Component {
 				<FloatingActionButton>
 					<Menu/>
 				</FloatingActionButton>
+
 				<Drawer>
+				<div
+				  style={{
+				    height: '200px',
+				    width: '100%',
+				    backgroundColor: 'salmon'
+				  }}
+				>
+				  LoginContainer
+				</div>
 					<Divider/>
 					<MenuItem 
 						primaryText={'Play'}
