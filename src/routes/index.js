@@ -6,9 +6,7 @@ import Profile from '../containers/Profile'
 
 
 const createRoutes = () => {
-	return (
-		
-	)
+
 }
 
 
