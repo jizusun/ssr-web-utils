@@ -14,7 +14,7 @@ ReactDOM.render(
 	/>,
 	rootEl
 );
-registerServiceWorker();
+// registerServiceWorker();
 
 
 if (module.hot) {
