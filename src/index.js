@@ -7,22 +7,20 @@ import Routes from './routes';
 
 const rootEl = document.getElementById('root')
 
+const App = () => (
+  <Router
+    history={browserHistory}
+    routes={Routes}
+  />
+)
+
 ReactDOM.render(
-	<Router
-		history={browserHistory}
-		routes={Routes}
-	/>,
+  <App />,
 	rootEl
 );
 // registerServiceWorker();
 
 
 if (module.hot) {
-  module.hot.accept('./routes', () => {
-    const NextApp = require('./routes').default
-    ReactDOM.render(
-      <NextApp />,
-      rootEl
-    )
-  })
+  module.hot.accept();
 }
