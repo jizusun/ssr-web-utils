@@ -5,7 +5,14 @@ import {Board, Squares} from '../styled/TicTacToe'
 class TicTacToe extends Component {
 
 	state = {
-		rows: 3
+		rows: 3,
+		gameState: new Array(9).fill(false),
+		ownMark: 'X',
+		otherMark: 'O',
+		gameOver: false,
+		yourTurn: true,
+		winner: false,
+		win: false
 	}
 
 	componentWillMount() {
@@ -16,12 +23,10 @@ class TicTacToe extends Component {
 		let unit = size / rows
 		let coordinates = []
 		for (let y = 0; y < rows; y++) {
-			for (let x = 0; y < rows; x++) {
+			for (let x = 0; x < rows; x++) {
 				coordinates.push([x*unit, y*unit])
 			}
 		}
-
-		debugger;
 
 		this.setState({
 			size, 
@@ -32,6 +37,7 @@ class TicTacToe extends Component {
 	}
 
 	move = (marker, index) => {
+		
 		console.log('Move made', marker, index)
 	}
 
@@ -57,7 +63,7 @@ class TicTacToe extends Component {
 			win,
 			gameOver,
 			yourTurn,
-			onMark
+			ownMark
 		} = this.state
 		return (
 			<div>
@@ -76,6 +82,10 @@ class TicTacToe extends Component {
 					unit={unit}
 					coordinates={coordinates}
 					gameState={gameState}
+					win={win}
+					gameOver={gameOver}
+					yourTurn={yourTurn}
+					ownMark={ownMark}
 					move={this.move}
 				/>
 			</div>
