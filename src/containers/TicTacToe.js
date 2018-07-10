@@ -72,22 +72,22 @@ class TicTacToe extends Component {
 					height={size}
 				>
 					<Board
-		            unit={unit}
-		            rows={rows}
-		            size={size}
-		          />
+            unit={unit}
+            rows={rows}
+            size={size}
+	        />
+          <Squares
+            unit={unit}
+            coordinates={coordinates}
+            gameState={gameState}
+            win={win}
+            gameOver={gameOver}
+            yourTurn={yourTurn}
+            ownMark={ownMark}
+            move={this.move}
+          />
 				</Stage>
 
-				<Squares
-					unit={unit}
-					coordinates={coordinates}
-					gameState={gameState}
-					win={win}
-					gameOver={gameOver}
-					yourTurn={yourTurn}
-					ownMark={ownMark}
-					move={this.move}
-				/>
 			</div>
 		)
 	}
