@@ -1,26 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import {Router, browserHistory} from 'react-router'
+import Routes from './routes'
 
-import {Router, browserHistory} from 'react-router';
-import Routes from './routes';
-
-const rootEl = document.getElementById('root')
-
-const App = () => (
+ReactDOM.render(
   <Router
     history={browserHistory}
     routes={Routes}
-  />
+  />,
+  document.getElementById('root')
 )
-
-ReactDOM.render(
-  <App />,
-	rootEl
-);
-// registerServiceWorker();
-
-
-if (module.hot) {
-  module.hot.accept();
-}
