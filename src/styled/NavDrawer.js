@@ -15,7 +15,7 @@ export const NavToggleButton = (props) => {
 			{...props}
 		>
 			<FloatingActionButton
-				onClick={props.toggle}
+				onTouchTap={props.toggle}
 			>
 				<Menu/>
 			</FloatingActionButton>
