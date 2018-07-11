@@ -6,7 +6,7 @@ import Menu from 'material-ui/svg-icons/navigation/menu'
 const StayVisible = styled.div`
 	position: absolute;
 	margin-left: ${(props) => (props.open) ? `${props.width}px` : 'none'};
-	transition: margin .2s
+	transition: margin .2s;
 `
 
 export const NavToggleButton = (props) => {
@@ -14,14 +14,11 @@ export const NavToggleButton = (props) => {
 		<StayVisible
 			{...props}
 		>
-			<FloatingActionButton 
-				onClick={props.toggle}
-				>
+			<FloatingActionButton
+				onTouchTap={props.toggle}
+			>
 				<Menu/>
 			</FloatingActionButton>
-			
 		</StayVisible>
 	)
 }
-
-
