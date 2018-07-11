@@ -61,10 +61,11 @@ export const Squares = ({
 				y={position[1]}
 				fontSize={unit}
 				text={mark}
+				width={unit}
 				fill={fill}
 				fontFamily={'Helvetica'}
 				align={'center'}
-				onClick={event => {
+				onClick={(event) => {
 					let index = event.target.index;
 					makeMove(index, ownMark)
 				}}
