@@ -1,4 +1,7 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
+# Mac dot-clean files
+.*
+!/.gitignore
 
 # dependencies
 /node_modules
