@@ -17,7 +17,7 @@ export const Container = styled.div`
 	width: 80%;
 	min-height: 80vh;
 	${media.handheld`
-		min-height: 100%;
+		width: 100%;
 	`}	
 `
 
