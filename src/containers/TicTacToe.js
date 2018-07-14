@@ -60,9 +60,8 @@ class TicTacToe extends Component {
 				winner = gameState[foundWin[0]]
 			}
 			if (foundWin || !gameState.includes(false)) {
-				gameOver = false
+				gameOver = true
 			}
-			debugger;
 			if (!yourTurn && !gameOver) {
 				this.makeAiMove(gameState)
 			}
