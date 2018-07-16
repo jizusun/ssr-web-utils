@@ -7,13 +7,13 @@ const authDomain = 'jizu.auth0.com'
 const clientId = 'a2OtaK70KsjwbNy-w_4sOslyikf420Kw'
 
 class AuthService {
-  constructor() {
+  constructor () {
     this.lock = new Auth0Lock(clientId, authDomain, {
       auth: {
         params: {
           scope: 'openid email'
-        },
-      },
+        }
+      }
     })
 
     this.showLock = this.showLock.bind(this)
@@ -44,7 +44,7 @@ class AuthService {
     )
   }
 
-  showLock() {
+  showLock () {
     this.lock.show()
   }
 
@@ -54,14 +54,14 @@ class AuthService {
       exp
     } = authFields
 
-    localStorage.setItem('idToken', idToken)
-    localStorage.setItem('exp', exp * 1000)
+    window.localStorage.setItem('idToken', idToken)
+    window.localStorage.setItem('exp', exp * 1000)
   }
 
   isCurrent = () => {
-    let expString = localStorage.getItem('exp')
+    let expString = window.localStorage.getItem('exp')
     if (!expString) {
-      localStorage.removeItem('idToken')
+      window.localStorage.removeItem('idToken')
       return false
     }
     let now = new Date()
@@ -69,30 +69,30 @@ class AuthService {
     if (exp < now) {
       this.logout()
       return false
-    }  else {
+    } else {
       return true
     }
   }
 
-  getToken() {
-    let idToken = localStorage.getItem('idToken')
+  getToken () {
+    let idToken = window.localStorage.getItem('idToken')
     if (this.isCurrent() && idToken) {
       return idToken
     } else {
-      localStorage.removeItem('idToken')
-      localStorage.removeItem('exp')
+      window.localStorage.removeItem('idToken')
+      window.localStorage.removeItem('exp')
       return false
     }
   }
 
   logout = () => {
-    localStorage.removeItem('idToken')
-    localStorage.removeItem('exp')
-    location.reload()
+    window.localStorage.removeItem('idToken')
+    window.localStorage.removeItem('exp')
+    window.location.reload()
   }
 
   createUser = (authFields) => {
-    return new Promise( (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       Relay.Store.commitUpdate(
         new CreateUser({
           email: authFields.email,
@@ -112,7 +112,7 @@ class AuthService {
   }
 
   signinUser = (authFields) => {
-    return new Promise( (resolve, reject) => {
+    return new Promise((resolve, reject) => {
       Relay.Store.commitUpdate(
         new SigninUser({
           idToken: authFields.idToken
@@ -128,9 +128,7 @@ class AuthService {
       )
     })
   }
-
-  const auth = new AuthService()
-
-  export default auth
-
 }
+
+const auth = new AuthService()
+export default auth
