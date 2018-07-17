@@ -21,7 +21,8 @@ const createRoutes = () => {
       <Route
         path={'/profile'}
         component={Profile}
-			/>
+        queries={ViewerQueries}
+      />
     </Route>
   )
 }

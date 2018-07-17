@@ -15,7 +15,7 @@ const rootEl = document.getElementById('root')
 const createHeaders = () => {
   let idToken = auth.getToken()
   return idToken
-    ? {Authorization: `Bearer ${idToken}` }
+    ? {Authorization: `Bearer ${idToken}`}
     : {}
 }
 
@@ -33,8 +33,11 @@ Relay.injectNetworkLayer(
     }
   ], {disableBatchQuery: true})
 )
+
 const App = () => (
   <Router
+    environment={Relay.store}
+    render={applyRouterMiddleware(useRelay)}
     history={browserHistory}
     routes={Routes}
   />
@@ -43,7 +46,7 @@ const App = () => (
 ReactDOM.render(
   <App />,
   rootEl
-);
+)
 // registerServiceWorker();
 
 if (module.hot) {

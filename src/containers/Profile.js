@@ -49,7 +49,7 @@ class Profile extends Component {
     })
   }
 
-  render() {
+  render () {
     let {email} = this.props.user
     return (
       <Container>
