@@ -6,8 +6,9 @@ import Profile from '../containers/Profile'
 import Relay from 'react-relay'
 
 const ViewerQueries = {
-  viewer: () => Relay.QL`query {viewer}`
+  viewer: () => Relay.QL`query { viewer }`
 }
+
 const createRoutes = () => {
   return (
     <Route path='/'

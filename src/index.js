@@ -36,7 +36,7 @@ Relay.injectNetworkLayer(
 
 const App = () => (
   <Router
-    environment={Relay.store}
+    environment={Relay.Store}
     render={applyRouterMiddleware(useRelay)}
     history={browserHistory}
     routes={Routes}

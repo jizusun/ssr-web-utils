@@ -40,7 +40,7 @@ export const GameRecord = styled.div`
   width: 100%;
   padding: 5px 0;
   margin: 1px 0;
-  background-color: ${props=>(props.index % 2 === 1)? 'rgb(225,225,225)' : 'rgb(240,240,240)'};
+  background-color: ${props => (props.index % 2 === 1) ? 'rgb(225,225,225)' : 'rgb(240,240,240)'};
   box-sizing: border-box;
 `
 
