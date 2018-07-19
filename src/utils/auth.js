@@ -4,7 +4,7 @@ import CreateUser from '../mutations/CreateUser'
 import SigninUser from '../mutations/SigninUser'
 
 const authDomain = 'jizu.auth0.com'
-const clientId = 'a2OtaK70KsjwbNy-w_4sOslyikf420Kw'
+const clientId = 'Ws3ES2oiY60jr6QI9mtk80S2JgPfKnW7'
 
 class AuthService {
   constructor () {
@@ -22,6 +22,7 @@ class AuthService {
   }
 
   authProcess = (authResult) => {
+    debugger;
     let {
       email,
       exp
